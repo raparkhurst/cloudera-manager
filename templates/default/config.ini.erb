@@ -1,0 +1,87 @@
+[General]
+server_host=<%= node['cloudera_manager']['server_host'] %>
+server_port=<%= node['cloudera_manager']['server_port'] %>
+# listening_port=<%= node['cloudera_manager']['listening_port'] %>
+listening_ip=<%= node['cloudera_manager']['listening_ip'] %>
+listening_hostname=<%= node['cloudera_manager']['listening_hostname'] %>
+# reported_hostname=<%= node['cloudera_manager']['reported_hostname'] %>
+# supervisord_port=<%= node['cloudera_manager']['supervisord_port'] %>
+# log_file=<%= node['cloudera_manager']['log_file'] %>
+# lib_dir=<%= node['cloudera_manager']['lib_dir'] %>
+
+# parcel_dir=<%= node['cloudera_manager']['parcel_dir'] %>
+# enable_supervisord_events=<%= node['cloudera_manager']['enable_supervisord_events'] %>
+max_collection_wait_seconds=<%= node['cloudera_manager']['max_collection_wait_seconds'] %>
+metrics_url_timeout_seconds=<%= node['cloudera_manager']['metrics_url_timeout_seconds'] %>
+task_metrics_timeout_seconds=<%= node['cloudera_manager']['task_metrics_timeout_seconds'] %>
+monitored_nodev_filesystem_types=<%= node['cloudera_manager']['monitored_nodev_filesystem_types'] %>
+local_filesystem_whitelist=<%= node['cloudera_manager']['local_filesystem_whitelist'] %>
+impala_profile_bundle_max_bytes=<%= node['cloudera_manager']['impala_profile_bundle_max_bytes'] %>
+stacks_log_bundle_max_bytes=<%= node['cloudera_manager']['stacks_log_bundle_max_bytes'] %>
+stacks_log_max_uncompressed_file_size_bytes=<%= node['cloudera_manager']['stacks_log_max_uncompressed_file_size_bytes'] %>
+orphan_process_dir_staleness_threshold=<%= node['cloudera_manager']['orphan_process_dir_staleness_threshold'] %>
+orphan_process_dir_refresh_interval=<%= node['cloudera_manager']['orphan_process_dir_refresh_interval'] %>
+scm_debug=<%= node['cloudera_manager']['scm_debug'] %>
+dns_resolution_collection_interval_seconds=<%= node['cloudera_manager']['dns_resolution_collection_interval_seconds'] %>
+dns_resolution_collection_timeout_seconds=<%= node['cloudera_manager']['dns_resolution_collection_timeout_seconds'] %>
+# agent_wide_credential_cache_location=<%= node['cloudera_manager']['agent_wide_credential_cache_location'] %>
+
+
+
+[Security]
+# Use TLS and certificate validation when connecting to the CM server.
+use_tls=<%= node['cloudera_manager']['use_tls'] %>
+max_cert_depth=<%= node['cloudera_manager']['max_cert_depth'] %>
+
+# verify_cert_file=<%= node['cloudera_manager']['verify_cert_file'] %>
+# verify_cert_dir=<%= node['cloudera_manager']['verify_cert_dir'] %>
+# client_key_file=<%= node['cloudera_manager']['client_key_file'] %>
+# client_keypw_cmd=<%= node['cloudera_manager']['client_keypw_cmd'] %>
+# client_keypw_file=<%= node['cloudera_manager']['client_keypw_file'] %>
+# client_cert_file=<%= node['cloudera_manager']['client_cert_file'] %>
+
+
+
+[Hadoop]
+#cdh_crunch_home=<%= node['cloudera_manager']['cdh_crunch_home'] %>
+#cdh_flume_home=<%= node['cloudera_manager']['cdh_flume_home'] %>
+#cdh_hadoop_bin=<%= node['cloudera_manager']['cdh_hadoop_bin'] %>
+#cdh_hadoop_home=<%= node['cloudera_manager']['cdh_hadoop_home'] %>
+#cdh_hbase_home=<%= node['cloudera_manager']['cdh_hbase_home'] %>
+#cdh_hbase_indexer_home=<%= node['cloudera_manager']['cdh_hbase_indexer_home'] %>
+#cdh_hcat_home=<%= node['cloudera_manager']['cdh_hcat_home'] %>
+#cdh_hdfs_home=<%= node['cloudera_manager']['cdh_hdfs_home'] %>
+#cdh_hive_home=<%= node['cloudera_manager']['cdh_hive_home'] %>
+#cdh_httpfs_home=<%= node['cloudera_manager']['cdh_httpfs_home'] %>
+#cdh_hue_home=<%= node['cloudera_manager']['cdh_hue_home'] %>
+#cdh_hue_plugins_home=<%= node['cloudera_manager']['cdh_hue_plugins_home'] %>
+#cdh_impala_home=<%= node['cloudera_manager']['cdh_impala_home'] %>
+#cdh_llama_home=<%= node['cloudera_manager']['cdh_llama_home'] %>
+#cdh_mr1_home=<%= node['cloudera_manager']['cdh_mr1_home'] %>
+#cdh_mr2_home=<%= node['cloudera_manager']['cdh_mr2_home'] %>
+#cdh_oozie_home=<%= node['cloudera_manager']['cdh_oozie_home'] %>
+#cdh_parquet_home=<%= node['cloudera_manager']['cdh_parquet_home'] %>
+#cdh_pig_home=<%= node['cloudera_manager']['cdh_pig_home'] %>
+#cdh_solr_home=<%= node['cloudera_manager']['cdh_solr_home'] %>
+#cdh_spark_home=<%= node['cloudera_manager']['cdh_spark_home'] %>
+#cdh_sqoop_home=<%= node['cloudera_manager']['cdh_sqoop_home'] %>
+#cdh_sqoop2_home=<%= node['cloudera_manager']['cdh_sqoop2_home'] %>
+#cdh_yarn_home=<%= node['cloudera_manager']['cdh_yarn_home'] %>
+#cdh_zookeeper_home=<%= node['cloudera_manager']['cdh_zookeeper_home'] %>
+#hive_default_xml=<%= node['cloudera_manager']['hive_default_xml'] %>
+#webhcat_default_xml=<%= node['cloudera_manager']['webhcat_default_xml'] %>
+#jsvc_home=<%= node['cloudera_manager']['jsvc_home'] %>
+#tomcat_home=<%= node['cloudera_manager']['tomcat_home'] %>
+
+
+
+[Cloudera]
+#mgmt_home=<%= node['cloudera_manager']['mgmt_home'] %>
+
+
+
+[JDBC]
+#cloudera_mysql_connector_jar=<%= node['cloudera_manager']['cloudera_mysql_connector_jar'] %>
+#cloudera_oracle_connector_jar=<%= node['cloudera_manager']['cloudera_oracle_connector_jar'] %>
+#By default, postgres jar is found dynamically in $MGMT_HOME/lib
+#cloudera_postgresql_jdbc_jar=<%= node['cloudera_manager']['cloudera_postgresql_jdbc_jar'] %>

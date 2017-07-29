@@ -9,7 +9,7 @@ case node['platform']
       deb_src       true
       action        :add
     end
-  when 'centos'
+  when 'centos','rhel'
     log "not supported!"
 end
 

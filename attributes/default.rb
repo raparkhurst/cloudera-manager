@@ -87,3 +87,33 @@ default['cloudera_manager']['cloudera_postgresql_jdbc_jar'] = ""
 ############
 # End config.ini
 ############
+
+
+
+
+############
+#
+# NGINX Settings
+#
+############
+
+
+# Nginx settings - Vault information (global)
+default['cloudera_manager']['chef-vault']['vault'] = "ssl_certs"
+default['cloudera_manager']['chef-vault']['data_bag'] = node["hostname"]
+default['cloudera_manager']['chef-vault']['wildcard_bag'] = "wildcard"
+
+
+
+# Nginx settings - Cloudera Manager itself
+default['cloudera_manager']['nginx']['cloudera_manager']['home_dir'] = '/etc/nginx'
+default['cloudera_manager']['nginx']['cloudera_manager']['ssl_dir'] = '/etc/nginx/ssl'
+default['cloudera_manager']['nginx']['cloudera_manager']['sites_available_dir'] = '/etc/nginx/sites-available'
+default['cloudera_manager']['nginx']['cloudera_manager']['sites_enabled_dir'] = '/etc/nginx/sites-enabled'
+default['cloudera_manager']['nginx']['cloudera_manager']['ssl_enabled'] = true
+default['cloudera_manager']['nginx']['cloudera_manager']['ssl_csr_file'] = "#{node['hostname']}.csr"
+default['cloudera_manager']['nginx']['cloudera_manager']['ssl_key_file'] = "#{node['hostname']}.key"
+default['cloudera_manager']['nginx']['cloudera_manager']['ssl_crt_file'] = "#{node['hostname']}.crt"
+default['cloudera_manager']['nginx']['cloudera_manager']['int_port_fwd'] = 7180
+default['cloudera_manager']['nginx']['cloudera_manager']['hostname'] = node['hostname']
+default['cloudera_manager']['nginx']['cloudera_manager']['site_name'] = "cm"

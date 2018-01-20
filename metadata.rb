@@ -14,6 +14,6 @@ depends "sudo"
   supports os
 end
 
-source_url 'https://github.com/raparkhurst/chef-cloudera-manager'
-issues_url 'https://github.com/raparkhurst/chef-cloudera-manager/issues'
+source_url 'https://github.com/raparkhurst/cloudera-manager'
+issues_url 'https://github.com/raparkhurst/cloudera-manager/issues'
 chef_version '>= 12.03' if respond_to?(:chef_version)

@@ -1,9 +1,8 @@
 case node['platform']
   when 'ubuntu'
     apt_repository 'cloudera-manager' do
-      uri           'http://archive.cloudera.com/cm6/6.3.0/ubuntu1804/apt'
+      uri           'http://archive.cloudera.com/cm6/ubuntu1804/apt/'
       key           'https://archive.cloudera.com/cm6/6.3.0/ubuntu1804/apt/archive.key'
-      distribution  'bionic-cm6.3.0'
       arch          'amd64'
       components    ['contrib']
       deb_src       true

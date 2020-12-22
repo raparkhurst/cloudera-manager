@@ -2,7 +2,7 @@
 # Cookbook Name:: cloudera-manager
 # Recipe:: default
 #
-# Copyright 2016, Digital Synapse, LLC 
+# Copyright 2016, YOUR_COMPANY_NAME
 #
 # All rights reserved - Do Not Redistribute
 #

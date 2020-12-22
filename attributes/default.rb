@@ -87,3 +87,139 @@ default['cloudera_manager']['cloudera_postgresql_jdbc_jar'] = ""
 ############
 # End config.ini
 ############
+
+
+
+## Databases
+# amon
+default['cloudera_manager']['amon']['database_type'] = "postgres"
+default['cloudera_manager']['amon']['database_port'] = "3306"
+default['cloudera_manager']['amon']['database_user'] = 'amon'
+default['cloudera_manager']['amon']['database_name'] = 'amon_db'
+default['cloudera_manager']['amon']['database_host'] = 'dbserver.example.com'
+
+# hive / metadata
+default['cloudera_manager']['hive']['database_type'] = "postgres"
+default['cloudera_manager']['hive']['database_port'] = "3306"
+default['cloudera_manager']['hive']['database_user'] = 'hive_db'
+default['cloudera_manager']['hive']['database_name'] = 'hive_db'
+default['cloudera_manager']['hive']['database_host'] = 'dbserver.example.com'
+
+# hue
+default['cloudera_manager']['hue']['database_type'] = "postgres"
+default['cloudera_manager']['hue']['database_port'] = "3306"
+default['cloudera_manager']['hue']['database_user'] = 'hue'
+default['cloudera_manager']['hue']['database_name'] = 'hue_db'
+default['cloudera_manager']['hue']['database_host'] = 'dbserver.example.com'
+
+# nav
+default['cloudera_manager']['nav']['database_type'] = "postgres"
+default['cloudera_manager']['nav']['database_port'] = "3306"
+default['cloudera_manager']['nav']['database_user'] = 'nav'
+default['cloudera_manager']['nav']['database_name'] = 'nav_db'
+default['cloudera_manager']['nav']['database_host'] = 'dbserver.example.com'
+
+# navms
+default['cloudera_manager']['navms']['database_type'] = "postgres"
+default['cloudera_manager']['navms']['database_port'] = "3306"
+default['cloudera_manager']['navms']['database_user'] = 'navms'
+default['cloudera_manager']['navms']['database_name'] = 'navms_db'
+default['cloudera_manager']['navms']['database_host'] = 'dbserver.example.com'
+
+# oozie
+default['cloudera_manager']['oozie']['database_type'] = "postgres"
+default['cloudera_manager']['oozie']['database_port'] = "3306"
+default['cloudera_manager']['oozie']['database_user'] = 'oozie'
+default['cloudera_manager']['oozie']['database_name'] = 'oozie_db'
+default['cloudera_manager']['oozie']['database_host'] = 'dbserver.example.com'
+
+# rman
+default['cloudera_manager']['rman']['database_type'] = "postgres"
+default['cloudera_manager']['rman']['database_port'] = "3306"
+default['cloudera_manager']['rman']['database_user'] = 'rman'
+default['cloudera_manager']['rman']['database_name'] = 'rman_db'
+default['cloudera_manager']['rman']['database_host'] = 'dbserver.example.com'
+
+# scm
+default['cloudera_manager']['scm']['database_type'] = "postgres"
+default['cloudera_manager']['scm']['database_port'] = "3306"
+default['cloudera_manager']['scm']['database_user'] = 'scm'
+default['cloudera_manager']['scm']['database_name'] = 'scm_db'
+default['cloudera_manager']['scm']['database_host'] = 'dbserver.example.com'
+
+# sentry
+default['cloudera_manager']['sentry']['database_type'] = "postgres"
+default['cloudera_manager']['sentry']['database_port'] = "3306"
+default['cloudera_manager']['sentry']['database_user'] = 'sentry'
+default['cloudera_manager']['sentry']['database_name'] = 'sentry_db'
+default['cloudera_manager']['sentry']['database_host'] = 'dbserver.example.com'
+
+
+
+default['cloudera_manager']['master']['packages'] = case node['platform_family']
+                                            when 'debian', 'ubuntu'
+                                              {
+                                                  "cloudera-manager-daemons" => "latest",
+                                                  "cloudera-manager-server-db" => "latest",
+                                                  "cloudera-manager-server" => "latest",
+                                                  "python-pip" => "latest"
+                                              }
+                                            when 'rhel', 'centos'
+                                              {
+                                                  "cloudera-manager-daemons" => "latest",
+                                                  "cloudera-manager-server-db" => "latest",
+                                                  "cloudera-manager-server" => "latest",
+                                                  "python-pip" => "latest"
+                                              }
+                                            else
+                                              {
+                                              }
+                                                    end
+
+
+default['cloudera_manager']['nodes']['packages'] = case node['platform_family']
+                                                    when 'debian', 'ubuntu'
+                                                      {
+                                                          "cloudera-manager-daemons" => "latest",
+                                                          "cloudera-manager-agent" => "latest"
+                                                      }
+                                                    when 'rhel', 'centos'
+                                                      {
+                                                          "cloudera-manager-daemons" => "latest",
+                                                          "cloudera-manager-agent" => "latest"
+                                                      }
+                                                    else
+                                                      {
+                                                      }
+                                                   end
+
+
+default['cloudera_manager']['nfs']['packages'] = case node['platform_family']
+                                                 when 'debian', 'ubuntu'
+                                                   {
+                                                       "nfs-common" => "latest"
+                                                   }
+                                                 when 'rhel', 'centos'
+                                                   {
+                                                       "nfs-utils" => "latest"
+                                                   }
+                                                 else
+                                                   {
+                                                   }
+                                                 end
+
+
+
+default['cloudera_manager']['external_db'] = false
+default['cloudera_manager']['database']['database_type'] = "postgres"
+default['cloudera_manager']['database']['postgres']['pip_dependencies'] = {
+    "psycopg2" => "2.7.5"
+}
+
+
+default['cloudera_manager']['mount_nfs_shares'] = false
+default['cloudera_manager']['nfs']['local_mount_point'] = "/nfs/"
+default['cloudera_manager']['nfs']['server_host'] = "localhost"
+default['cloudera_manager']['nfs']['remote_mount_point'] = "/export/fs"
+default['cloudera_manager']['nfs']['version'] = "nfs"
+default['cloudera_manager']['nfs']['options'] = "rw,noauto"

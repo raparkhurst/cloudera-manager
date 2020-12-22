@@ -1,18 +1,17 @@
 # cloudera-manager Cookbook
 
-TODO: Enter the cookbook description here.
+A chef cookbook to install and do basic configuration of Cloudera's distribution of Hadoop for Linux.
 
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+I started work on an nginx proxy but it doesn't work currently -- please ignore (or fork and contribute)
 
 ## Requirements
 
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
-e.g.
 ### Platforms
 
-- SandwichOS
+- Ubuntu 14.04 -- fully tested
+- Ubuntu 16.04 -- agent appears to not work but manager works
+
 
 ### Chef
 
@@ -20,45 +19,22 @@ e.g.
 
 ### Cookbooks
 
-- `toaster` - cloudera-manager needs toaster to brown your bagel.
+- `users`
+- `sudo`
 
-## Attributes
-
-TODO: List your cookbook attributes here.
-
-e.g.
-### cloudera-manager::default
-
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['cloudera-manager']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
-
-## Usage
-
-### cloudera-manager::default
-
-TODO: Write usage instructions for each cookbook.
-
-e.g.
-Just include `cloudera-manager` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[cloudera-manager]"
-  ]
+    "recipe[cloudera-manager::master]",
+    "recipe[cloudera-manager::nodes]"
+  ],
+  "normal": {
+  	"cloudera_manager": {
+  		"server_host": "<ip_address>"
+  	}
+  }
 }
 ```
 
@@ -76,5 +52,5 @@ e.g.
 
 ## License and Authors
 
-Authors: TODO: List authors
+Authors:  Robert Parkhurst
 
